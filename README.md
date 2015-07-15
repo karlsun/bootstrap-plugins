@@ -72,6 +72,3 @@
 > 操作时触发事件```onChangeVisible(column,columns)```
 
 - - -
-
-## TODO List
-* bsForm：FileUpload需要优化，配合服务端，完成上传控制、进度显示； 文档编写
