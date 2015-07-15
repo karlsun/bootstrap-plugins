@@ -1,0 +1,51 @@
+.richDropDown{
+  background-color: #fff;
+  position: absolute;
+  z-index: 9999;
+  overflow: hidden;
+  border: 1px solid #bababa;
+  box-shadow: 0 2px 5px #858585;
+  padding:4px;
+  .select-search-input{
+    padding: 4px;
+    .search-input{
+      display: inline-block;
+      width:auto;
+    }
+    a.search-link{
+      margin: auto 6px;
+    }
+    .search-loading{
+      position: absolute;
+      z-index: 1;
+      margin-left: -18px;
+      margin-top: 9px;
+      animation: rotate360 1s infinite;
+      -moz-animation: rotate360 1s infinite;
+      -webkit-animation: rotate360 1s infinite;
+      -o-animation: rotate360 1s infinite;
+    }
+  }
+  .select-pool{
+    margin-top: 4px;
+    border-top: 1px solid #1ca3f1;
+    >ul{
+      padding: auto 4px;
+      >li.item{
+        padding: 4px;
+      }
+      >li.selected{
+        background-color: #1889cb;
+        color:#fff;
+      }
+      >li.item:hover{
+        background-color: #1ca2ef;
+        color:#fff;
+      }
+    }
+    .select-pool-empty{
+      color: #acacac;
+      text-align: center;
+    }
+  }
+}

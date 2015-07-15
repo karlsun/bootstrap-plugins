@@ -1,0 +1,61 @@
+.bsGrid{
+  position: relative;
+  .text-overflow(){
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+  }
+  .bgGrid-checkbox{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    .g-icons-bg();
+    background-position: -41px -37px;
+  }
+  .bgGrid-checkbox-active{
+    background-position: -23px -37px;
+  }
+  .bsGrid-table-container{
+    width:100%;
+    overflow:auto;
+  }
+  .bsGrid-cell{
+    .text-overflow;
+  }
+  .td-overflow-hidden{
+    .text-overflow;
+  }
+  .bsGrid-control{
+    position: absolute;
+    right:1%;
+    top: 6px;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .bgGrid-column-selector{
+    display: none;
+    z-index: 100;
+    position: absolute;
+    right: 30px;
+    top:-30px;
+    width:150px;
+    background-color: #fff;
+    border: 1px solid #a5a5a5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    .panel-body{
+      padding: 0;
+      .bgGrid-column-list{
+        width:100%;
+        .column{
+          text-align: left;
+          .text-overflow;
+          i{
+            width:14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.bsBoard{
+  .panel-heading{
+    .pull-right{
+      i{
+        transition:-webkit-transform 0.40s ease-in-out;
+      }
+      i:hover{
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+
+  .panel-heading-move{
+    /*cursor: move;*/
+  }
+
+  .panel-body{
+    width:100%;
+    height:100%;
+  }
+
+  .panel-body-over-hidden{
+    /*overflow: hidden;*/
+  }
+
+  .operations-menus{
+    position: absolute;
+    z-index: 10;
+    .menu{
+      text-align: left;
+      i{
+        width:14px;
+      }
+    }
+  }
+}

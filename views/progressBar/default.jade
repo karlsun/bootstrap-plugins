@@ -1,0 +1,7 @@
+extends ../layout
+block scripts
+    script(src="/demo/progressBar-demo.js",type="text/javascript")
+block content
+    #progressBar-demo(style="position:absolute;top:0;left:0;width:100%;")
+    button#btnLoadingAction.btn.btn-primary(type="button") Loading Action
+    button#btnWithSpeed.btn.btn-primary(type="button") With Speed

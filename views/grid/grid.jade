@@ -1,0 +1,124 @@
+extends ../layout
+block scripts
+    script(src="/demo/grid-demo.js",type="text/javascript")
+block content
+    ol.breadcrumb
+        li
+            a(href="/") Home
+        li.active Grid
+     .panel
+        div.btn-toolbar(type="toolbar")
+            div.btn-group
+                button#btnLoadAction.btn.btn-primary.btn-sm 加载100条数据
+                .hide(qtip-for="btnLoadAction")
+                    pre
+                        code.javascript.
+                            var loadData = [];
+                            for(var i=0;i<100;i++){
+                                loadData.push({
+                                value:"cell" + i,
+                                val:"val"+i,
+                                status : i % 4 == 0 ? "enabled" : "disabled"
+                                });
+                            }
+                            $('#gridList').bsGrid("load",{
+                                data:loadData,
+                                pageNo:1
+                            });
+                button#btnSetPageSize.btn.btn-primary.btn-sm 设置页大小为"10"
+                .hide(qtip-for="btnSetPageSize")
+                    pre
+                        code.javascript.
+                            $("#gridList").bsGrid("setPageSize",10);
+                button#btnNoData.btn.btn-primary.btn-sm No Data
+                .hide(qtip-for="btnNoData")
+                    pre
+                        code.javascript.
+                            $("#gridList").bsGrid("load",{
+                                data : [],
+                                pageNo : 1
+                             });
+    .row
+        .col-lg-5
+            pre.demo
+                code.javascript(style="height:300px;").
+                    // 初始化表格
+                    $("#gridList").bsGrid({
+                        paging:true,
+                        dataCount:5,
+                        multi:true,
+                        pageSize:3,
+                        title:"表格Demo",
+                        statusField:"status",
+                        statusColor:{enabled:"#dff0d8", disabled:"#fcf8e3"},
+                        hasCheckBox:true,
+                        onSelect:function(row,data){
+                            console.log("onSelect : " + data.value);
+                        },
+                        onUnSelect:function(row,data){
+                            console.log("onUnSelect : " + data.value);
+                        },
+                        onPaging:function(pageNo){
+                            console.log("pageNo : " + pageNo);
+                        },
+                        onSort:function(field,order,column){
+                            console.log("onSort : field="+field+", sort="+order+"");
+                            console.log(column);
+                        },
+                        onMouseRightUp:function(data, $row){
+                            $("#gridList").bsContextMenu("disabled","back",true);
+                            console.log(data);
+                        },
+                        emptyTemplate:"&lt;div class='text-center'&gt;&lt;i&gt;No data exists.&lt;/i&gt;&lt;/div&gt;",
+                        columns:[
+                            {
+                                title:"列1",
+                                field:"value",
+                                sortable:true
+                            },
+                            {
+                                title:"列2",
+                                field:"val",
+                                sortable:true,
+                                visible:false
+                            },
+                            {
+                                title:"列3",
+                                field:"value"
+                            },
+                            {
+                                title:"列4",
+                                field:"value",
+                                visible:false
+                            }
+                        ],
+                        data:[
+                            {
+                                value:"cel1",
+                                val:"cell1",
+                                status : "enabled"
+                            },
+                            {
+                                value:"cell2",
+                                val:"cell2",
+                                status : "enabled"
+                            },
+                            {
+                                value:"cell3",
+                                val:"cell3",
+                                status : "enabled"
+                            },
+                            {
+                                value:"cell4",
+                                val:"cell4",
+                                status : "disabled"
+                            },
+                            {
+                                value:"cell5",
+                                val:"cell5",
+                                status : "enabled"
+                            }
+                        ]
+                    });
+        .col-lg-7
+            #gridList

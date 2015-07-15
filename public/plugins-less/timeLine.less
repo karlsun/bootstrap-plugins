@@ -1,0 +1,63 @@
+.bsTimeLine{
+  .bsTimeLine-time-line{
+    border:0;
+    border-bottom:1px solid rgb(170,212,233);
+    border-top:1px solid rgb(170,212,233);
+    border-right:1px solid rgb(170,212,233);
+    width:100%;
+    height:40px;
+    position: relative;
+    background-image: none;
+    background-color:rgb(217,237,246);
+    border-radius:0;
+    .ui-widget-header{
+      opacity: .3;
+    }
+    .ui-slider-handle{
+      top:8px;
+      cursor: e-resize;
+      .g-icons-bg();
+      width: 26px;
+      height: 26px;
+      border: 0px;
+      background-position: -22px -4px;
+      outline:none;
+    }
+    .ui-slider-handle:nth-child(3){
+      background-position: -52px -4px;
+    }
+    .ui-state-hover{
+      background-position: -82px -4px;
+    }
+    .ui-state-hover:nth-child(3){
+      background-position: -112px -4px;
+    }
+    .ui-slider-range{
+      border-radius: 0;
+      background-image: none;
+      background-color: rgb(23,138,203);
+      cursor: move;
+    }
+    .ui-slider-range:hover{
+      background-color: rgb(28, 168, 247);
+      border:1px solid rgb(20, 118, 173);
+    }
+    .time-line-tick{
+      border-left: 1px solid rgb(170,212,233);
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      line-height: 40px;
+      overflow: hidden;
+    }
+    .time-range{
+      position: absolute;
+      background-color: #d3d3d3;
+      opacity: 0.3;
+    }
+    .popover{
+      width: 340px;
+      max-width: inherit;
+    }
+  }
+}
